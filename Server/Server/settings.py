@@ -75,16 +75,14 @@ WSGI_APPLICATION = 'Server.wsgi.application'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
 DATABASES = {
-    "default": {
-        "ENGINE": "mssql",
-        "NAME": "35139cd2b7e578fdfd97ab9fa2a09cc1f9f84b4a4901bf24badca7fd0c5629cd",
-        "USER": "USER_NAME",
-        "PASSWORD": "<YourStrong@Passw0rd>",
-        "HOST": "HOST_ADDRESS",
-        "PORT": "1433",
-        "OPTIONS": {"driver": "ODBC Driver 17 for SQL Server", 
-        },
-    },
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'PizzaDB',
+        'USER': 'HeadChef',
+        'PASSWORD': '1234',
+        'HOST': 'localhost',
+        'PORT': '3306',
+    }
 }
 
 

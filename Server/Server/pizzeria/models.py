@@ -3,15 +3,15 @@ from django.urls import reverse
 
 # Create your models here.
 class Pizza(models.Model):
-    plate = models.IntegerField()
-    crust = models.FloatField()
-    sauce = models.IntegerField()
-    cheese = models.IntegerField()
-    Topping1 = models.IntegerField()
+    plate = models.IntegerField() # this represents the level of the pizza
+    crust = models.FloatField() # This is how far the crust is baked
+    sauce = models.IntegerField() # This is the type of sauce on the pizza
+    saucy = models.FloatField() # This is the amount of sauce on the pizza
+    Topping1 = models.IntegerField() # lowest level of toppings
     Topping2 = models.IntegerField()
     Topping3 = models.IntegerField()
     Topping4 = models.IntegerField()
-    Topping5 = models.IntegerField()
+    Topping5 = models.IntegerField() # highest level of toppings
 
     def __str__(self):
         return f"{self.plate} {self.crust} {self.sauce} {self.Topping1} {self.Topping2} {self.Topping3} {self.Topping4} {self.Topping5}"

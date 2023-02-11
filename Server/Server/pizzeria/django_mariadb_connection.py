@@ -8,21 +8,12 @@ django.setup()
 
 # Connect to the database
 import mysql.connector
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'PizzaDB',
-        'USER': 'HeadChef',
-        'PASSWORD': '1234',
-        'HOST': 'localhost',
-        'PORT': '3306',
-    }
-}
+
 conn = mysql.connector.connect(
     host='your_host',
-    user='your_user',
-    password='your_password',
-    database='your_database'
+    user='headChef',
+    password='1234',
+    database='PizzaDB'
 )
 
 # Use the connection to perform a database query
@@ -37,5 +28,3 @@ for result in results:
 # Close the connection
 conn.close()
 
-#create a table on the database
-cursor.execute("CREATE TABLE customers (name VARCHAR(255), address VARCHAR(255))")

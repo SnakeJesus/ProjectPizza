@@ -20,7 +20,7 @@ def get_user_data(request):
     except Userbase.DoesNotExist:
         return JsonResponse({'error': 'User not found'})
     
-User = get_user_model()
+User = get_user_data()
 
 def generate_pizza(request, username):
     user = User.objects.get(name=username)

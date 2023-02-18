@@ -16,15 +16,12 @@ import {
   Text,
   useColorScheme,
   View,
-  Button
+  TouchableOpacity,
+  Image
 } from 'react-native';
 
 import {
-  Colors,
-  DebugInstructions,
-  Header,
-  LearnMoreLinks,
-  ReloadInstructions,
+  Colors
 } from 'react-native/Libraries/NewAppScreen';
 
 type SectionProps = PropsWithChildren<{
@@ -57,7 +54,11 @@ function Section({ children, title }: SectionProps): JSX.Element {
   );
 }
 
-function HomeScreen({ navigation }): JSX.Element {
+let doSomething = () => {
+  console.log("Hello World");
+}
+
+function HomeScreen({ navigation }: any): JSX.Element {
   const isDarkMode = useColorScheme() === 'dark';
 
   const backgroundStyle = {
@@ -77,15 +78,19 @@ function HomeScreen({ navigation }): JSX.Element {
           style={{
             backgroundColor: isDarkMode ? Colors.black : Colors.white,
           }}>
-          <Section title="Project Pizza">
-            This is the development environment
-          </Section>
-          <Section title="Functional Test">
-            <Button
-              title="Go to Oven"
-              onPress={() => navigation.navigate('Oven')}
-            />
-          </Section>
+            <TouchableOpacity 
+              onPress={doSomething} 
+              style={{alignItems: 'center'}}
+            >
+              <Image  source={require('../assets/oven_800.jpg')}
+                      style={{width:300,
+                      height:300}}/>
+              <View style={{ position: 'absolute', bottom: 0, alignSelf: 'center' }}>
+                <Text style={{ position: 'relative', top: 2, backgroundColor: 'green', color: '#fff', padding: 10 }}>
+                  Bake
+                </Text>
+              </View>
+            </TouchableOpacity>
         </View>
       </ScrollView>
     </SafeAreaView>
